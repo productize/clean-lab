@@ -11,7 +11,9 @@ retraining] and [image recognition] examples.
 Usage
 -----
 
-Set-up: train the neural network, resulting in the graph model and found labels
+### Set-up
+
+Train the neural network, resulting in the graph model and found labels
 (best to do this on a fast computer):
 
 ```
@@ -24,14 +26,10 @@ python retrain.py \
 
 ```
 
-Optional take a picture on a Raspberry pi:
+### Testing
 
-```
-python take_pic.py
-
-```
-
-Label the image:
+Label a test image. Best practice is to use an image that was not used during
+training.
 
 ```
 python label_image.py \
@@ -43,11 +41,22 @@ python label_image.py \
 
 ```
 
-Note: to install just the dependencies for labeling images, run:
+### Deploying
+
+Install dependencies on a Raspberry Pi:
 
 ```
-pip install -r requirements-label.txt
+sudo apt install libatlas-base-dev
+pip3 install -r requirements-server.txt
 ```
+
+Run the server:
+
+```
+python3 deep-clean-server.py
+```
+
+TODO: create a service
 
 [Inception V3]: https://tfhub.dev/google/imagenet/inception_v3/feature_vector/1
 [TensorFlow]: https://www.tensorflow.org/

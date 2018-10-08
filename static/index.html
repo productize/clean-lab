@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Deep clean</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<style>
+		#middle {
+			padding: 20px;
+			max-width: 500px;
+		}
+		#lab-image {
+			width: 100%;
+			display:block;
+			margin-left: auto;
+			margin-right: auto;
+			margin-bottom: 25px;
+		}
+		.status-image {
+			height: 200px;
+		}
+		.messy {
+			display: none;
+		}
+		.busy {
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+    	<div class="mx-auto" id="middle">
+	      	<h1 id="title"></h1>
+			<p id="description"></p>
+			<img id="lab-image" src="lab.jpg">
+			<p id="result"></p>
+			<button type="button" class="btn btn-primary" onclick="takePicture()">Take new picture</button>
+			<p>
+				<span>Oh no it isn't! The lab is actually</span>
+				<select>
+					<option value="clean">clean</option>
+					<option value="messy">messy</option>
+					<option value="busy">busy</option>
+				</select>
+				<a href="confirm">Confirm</a>
+			</p>
+		</div>
+	</div>
+</body>
+<script src="index.js"></script>
+</html>
